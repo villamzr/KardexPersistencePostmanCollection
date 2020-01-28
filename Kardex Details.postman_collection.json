@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "3003b88a-dd82-46cb-ac30-625dd6f9b824",
+		"name": "Kardex Details",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateKardexDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"idKardexMain\":\"9\",\n\t\t\"date\":\"28-01-2020\",\n\t\t\"description\":\"Registro de Factura 3\",\t\n\t\t\"unitValue\":0,\n\t\t\"inputQuantity\":0,\n\t\t\"inputValue\":0,\n\t\t\"outputQuantity\":0,\n\t\t\"outputValue\":0,\n\t\t\"balanceQuantity\":0,\n\t\t\"balanceValue\":0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/kardexDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"kardexDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllKardexDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/kardexDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"kardexDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByIdKardexDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/kardexDetails/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"kardexDetails",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateKardexDetails",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idKardexMain\":\"8\",\n\t\"date\":\"28-01-2020\",\n\t\"description\":\"Registro de Factura NUEVA\",\t\n\t\"unitValue\":0,\n\t\"inputQuantity\":0,\n\t\"inputValue\":0,\n\t\"outputQuantity\":0,\n\t\"outputValue\":0,\n\t\"balanceQuantity\":0,\n\t\"balanceValue\":0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/kardexDetails/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"kardexDetails",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteKardexDetails",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\t\"bookName\":\"Cien Años de Soledad\",\n\t\t\"authorName\":\"Gabriel García Marquez\",\n\t\t\"isbn\":\"1994\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/kardexDetails/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"kardexDetails",
+						"18"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
