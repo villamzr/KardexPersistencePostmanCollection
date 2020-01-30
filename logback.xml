@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<property name="max.retention.days" value="15" />
+	<property name="max.file.size" value="10MB" />
+	<property name="log.pattern" value="%date [%-5level] [%thread] [%logger] [%file:%line] - %msg%n"/>
+	
+	<appender name="KARDEX_PERSISTENCE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs.directory}/KardexPersistence.log</file>
+		<encoder>
+			<charset>utf-8</charset>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logs.directory}/history/AuthorizeClosure-%d{yyyy-MM-dd}-%i.log</fileNamePattern> 
+            <maxHistory>${max.retention.days}</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+	</appender>
+	<appender name="KARDEX_API" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logs.directory}/KardexApi.log</file>
+		<encoder>
+			<charset>utf-8</charset>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logs.directory}/history/KardexApi-%d{yyyy-MM-dd}-%i.log</fileNamePattern> 
+            <maxHistory>${max.retention.days}</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${max.file.size}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+	</appender>
+
+	<logger name="com.kardex" additivity="true" level="debug">
+		<appender-ref ref="KARDEX_PERSISTENCE" />
+	</logger>
+	<logger name="com.kardexapi" additivity="true" level="error">
+		<appender-ref ref="KARDEX_API" />
+	</logger>
+</Configuration>
